@@ -52,6 +52,9 @@ samples=samples(pi,mu,sigma)
 <img src="img/orig+sampled.jpg" alt="ad" ></img>
 <h4> Inverse and sampled data</h4>
 </div>
+
+
+
 #### References
 
 Bishop, C. M. Mixture density networks. (1994).
