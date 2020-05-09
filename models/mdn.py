@@ -27,14 +27,13 @@ class MixtureDensityNetwork(nn.Module):
 		self.dim_in=dim_in
 		self.num_latent=num_latent
 		self.dim_out=dim_out
-		self.pi_h=nn.Linear(dim_in,dim_out*num_latent)
+		self.pi_h=nn.Linear(dim_in,num_latent)
 		self.mu_h=nn.Linear(dim_in,dim_out*num_latent)
 		self.sigma_h=nn.Linear(dim_in,dim_out*num_latent)
 
 	def forward(self,x):
 
 		pi=self.pi_h(x)
-		pi=pi.view(-1,self.dim_out,self.num_latent)
 		pi=F.softmax(pi, dim=-1)
 
 		mu=self.mu_h(x)
